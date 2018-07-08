@@ -1,0 +1,38 @@
+.chasing-subpage {
+  .img-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    min-width: 540px;
+    transition: all 0.3s ease-in;
+    img {
+      width: 270px;
+      height: 360px;
+    }
+  }
+  .action {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 150px;
+    button {
+      margin-right: 20px;
+    }
+  }
+  .progress-container {
+    position: relative;
+    margin-bottom: 40px;
+    & > span {
+      position: absolute;
+      display: inline-block;
+      width: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .ant-progress {
+      width: 100%;
+      padding-left: 54px;
+    }
+  }
+}
