@@ -12,7 +12,7 @@ class ExtraInfo extends PureComponent {
     super(props);
     this.state = {
       // 默认值
-      day: 0,
+      day: 1,
       weather: '晴',
       date: moment(new Date())
         .format('YYYY-MM-DD')
@@ -38,9 +38,10 @@ class ExtraInfo extends PureComponent {
             .format('YYYY-MM-DD')
             .split('-');
 
-          if (day !== newDay || date[2] !== newDate[2]) {
+          // if (day !== newDay || date[2] !== newDate[2]) {
+          if (date[2] !== newDate[2]) {
             this.setState({
-              day: newDay,
+              // day: newDay,
               date: newDate,
               weather: this.getRandomWeather()
             });
@@ -71,13 +72,28 @@ class ExtraInfo extends PureComponent {
     const weatherMap = ['晴', '多云', '阴', '小雨', '小雨转阴', '大雨'];
     return weatherMap[Math.floor(Math.random() * weatherMap.length)];
   };
-
+  handleNextDay = () => {
+    const { day } = this.state;
+    this.setState({ day: day + 1 });
+    this.props.handleNextDay();
+  };
   render() {
     const { day, weather, date } = this.state;
+    const { money } = this.props;
     return (
       <React.Fragment>
         <div className="extra-left">
-          相识第 <span> {day} </span>天
+          <div>
+            相识第 <span> {day} </span>天
+          </div>
+          <div>
+            金币 <span className="coin">{money}</span>
+          </div>
+          <div>
+            <Button ghost onClick={this.handleNextDay}>
+              下一天
+            </Button>
+          </div>
         </div>
         <div className="extra-right">
           <span>

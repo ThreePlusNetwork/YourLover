@@ -8,7 +8,7 @@ class Chasing extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      playerPic: require('mock/image/player1.jpg'),
+      playerPic: require('mock/image/player3.jpeg'),
       percent: 0,
       success: false
     };
@@ -29,7 +29,9 @@ class Chasing extends PureComponent {
     //所需要做的只是更改百分比
     const type = e.target.getAttribute('keyword');
     const decimal = decimalMap.get(type);
-    this.handleMandomNumber(decimal);
+    if (this.props.handleReduceMoney(type)) {
+      this.handleMandomNumber(decimal);
+    }
   };
 
   reduceLimit = percent => {
@@ -81,7 +83,7 @@ class Chasing extends PureComponent {
     return (
       <div className="chasing-subpage">
         <div className="progress-container">
-          <span>亲密度</span>
+          <span>心动值</span>
           <Progress percent={percent} status="active" />
         </div>
         <div className="img-container" ref={this.handleRef}>
@@ -90,9 +92,16 @@ class Chasing extends PureComponent {
         </div>
         <div className="action">
           {renderActionList.map(action => (
-            <Button key={action} keyword={action} onClick={this.handleReduce}>
-              {textMap.get(action)}
-            </Button>
+            // <Button key={action} keyword={action} onClick={this.handleReduce}>
+            //   {textMap.get(action)}
+            // </Button>
+            <div key={action} title={textMap.get(action)}>
+              <img
+                src={require(`mock/image/${action}.png`)}
+                keyword={action}
+                onClick={this.handleReduce}
+              />
+            </div>
           ))}
         </div>
       </div>

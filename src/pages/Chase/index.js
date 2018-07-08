@@ -4,6 +4,8 @@ import { message, Layout } from 'antd';
 import ExtraInfo from './ExtraInfo';
 import Chasing from './Chasing';
 
+import { moneyMap } from './Chasing/config';
+
 import './style.less';
 
 const { Header, Content } = Layout;
@@ -16,18 +18,35 @@ class Chase extends PureComponent {
       });
     }
     this.state = {
-      info: this.props.location.state
+      info: this.props.location.state,
+      money: 300
     };
   }
-
+  handleNextDay = () => {
+    this.setState({ money: this.state.money + 100 });
+  };
+  handleReduceMoney = type => {
+    const money = moneyMap.get(type);
+    const newMoney = this.state.money - money;
+    if (newMoney < 10) {
+      message.info('大兄弟，钱包羞涩呢！');
+      return false;
+    }
+    this.setState({ money: this.state.money - money });
+    return true;
+  };
   render() {
-    const { info } = this.state;
+    const { info, money } = this.state;
     return (
       <Layout className="chase-page">
         <Header>
-          <ExtraInfo />
+          <ExtraInfo money={money} handleNextDay={this.handleNextDay} />
         </Header>
-        <Content>{info ? <Chasing data={info} /> : null}</Content>
+        <Content>
+          {info ? (
+            <Chasing data={info} handleReduceMoney={this.handleReduceMoney} />
+          ) : null}
+        </Content>
       </Layout>
     );
   }

@@ -22,4 +22,13 @@ const textMap = new Map([
   ['onlineGame', '带妹子上分玩游戏']
 ]);
 
-export { decimalMap, textMap };
+const moneyMap = new Map([
+  ['gift', 10],
+  ['flower', 35],
+  ['movie', 60],
+  ['dinner', 200],
+  ['travel', 300],
+  ['bar', 99],
+  ['onlineGame', 15]
+]);
+export { decimalMap, textMap, moneyMap };
