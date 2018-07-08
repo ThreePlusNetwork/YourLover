@@ -52,13 +52,13 @@ class Chasing extends PureComponent {
       return;
     }
     if (percent === 0 && decimal < 0) {
-      message.error('大兄弟，女神离你越来越远了', 0.8);
+      message.info('大兄弟，女神离你越来越远了', 0.8);
       return;
     }
     if (decimal > 0) {
       message.success('好感度又增加了，女神就在眼前等你～', 0.8);
     } else {
-      message.error('女神不吃这一套噢', 1);
+      message.info('女神不吃这一套噢', 1);
     }
     this.setState(
       { percent: this.state.percent + this.getRandomNumber(decimal) },
@@ -82,7 +82,7 @@ class Chasing extends PureComponent {
       <div className="chasing-subpage">
         <div className="progress-container">
           <span>亲密度</span>
-          <Progress size="small" percent={percent} status="active" />
+          <Progress percent={percent} status="active" />
         </div>
         <div className="img-container" ref={this.handleRef}>
           <img src={playerPic} alt="player1" />
@@ -94,21 +94,6 @@ class Chasing extends PureComponent {
               {textMap.get(action)}
             </Button>
           ))}
-          {/* <Button keyword="gift" onClick={this.handleReduce}>
-            小礼物
-          </Button>
-          <Button keyword="flower" onClick={this.handleReduce}>
-            送花
-          </Button>
-          <Button keyword="movie" onClick={this.handleReduce}>
-            看电影
-          </Button>
-          <Button keyword="dinner" onClick={this.handleReduce}>
-            烛光晚餐
-          </Button>
-          <Button keyword="travel" onClick={this.handleReduce}>
-            一起去旅行
-          </Button> */}
         </div>
       </div>
     );
