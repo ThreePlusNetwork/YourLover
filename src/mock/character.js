@@ -4,7 +4,7 @@ export default {
     {
       id: 0,
       name: '苏有容',
-      picture: require('./image/1.jpg'),
+      picture: require('./image/1.jpeg'),
       age: 25,
       job: '霸道总裁',
       hobby: '工作女狂人',
@@ -13,7 +13,7 @@ export default {
     {
       id: 1,
       name: '苏有容',
-      picture: require('./image/1.jpg'),
+      picture: require('./image/2.jpeg'),
       age: 25,
       job: '霸道总裁',
       hobby: '工作女狂人',
@@ -22,7 +22,7 @@ export default {
     {
       id: 2,
       name: '苏有容',
-      picture: require('./image/1.jpg'),
+      picture: require('./image/3.jpeg'),
       age: 25,
       job: '霸道总裁',
       hobby: '工作女狂人',
@@ -31,7 +31,7 @@ export default {
     {
       id: 3,
       name: '苏有容',
-      picture: require('./image/1.jpg'),
+      picture: require('./image/4.jpeg'),
       age: 25,
       job: '霸道总裁',
       hobby: '工作女狂人',
@@ -40,7 +40,7 @@ export default {
     {
       id: 4,
       name: '苏有容',
-      picture: require('./image/1.jpg'),
+      picture: require('./image/5.jpeg'),
       age: 25,
       job: '霸道总裁',
       hobby: '工作女狂人',
@@ -49,7 +49,7 @@ export default {
     {
       id: 5,
       name: '苏有容',
-      picture: require('./image/1.jpg'),
+      picture: require('./image/6.jpeg'),
       age: 25,
       job: '霸道总裁',
       hobby: '工作女狂人',
@@ -58,7 +58,7 @@ export default {
     {
       id: 6,
       name: '苏有容',
-      picture: require('./image/1.jpg'),
+      picture: require('./image/7.jpeg'),
       age: 25,
       job: '霸道总裁',
       hobby: '工作女狂人',
@@ -67,7 +67,7 @@ export default {
     {
       id: 7,
       name: '苏有容',
-      picture: require('./image/1.jpg'),
+      picture: require('./image/8.jpeg'),
       age: 25,
       job: '霸道总裁',
       hobby: '工作女狂人',

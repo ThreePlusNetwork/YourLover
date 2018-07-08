@@ -36,10 +36,12 @@ class Character extends PureComponent {
       onSelect
     } = this.props;
     return (
-      <div
-        className={`character-card ${selected ? 'selected' : ''}`}
-        onClick={e => onSelect(id)}>
-        <img src={picture} alt="character" />
+      <div className="character-card" onClick={e => onSelect(id)}>
+        <img
+          src={picture}
+          alt="character"
+          className={`${selected ? 'selected' : ''}`}
+        />
         <div>
           <p>{name}</p>
           <p>{age}</p>
